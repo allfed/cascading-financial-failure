@@ -1,11 +1,21 @@
-name: cb
+name: cff
 channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8
-  - numpy=1.21.2
+  - python=3.12
+  - numpy
+  - scipy
+  - pandas
+  - openpyxl
+  - country_converter
+  - geopandas
+  - matplotlib
+  - seaborn
+  - networkx
+  - tqdm
+  - pytest
   - pip
   - pip:
-    - tqdm==4.62.3
+    - cpi
 
