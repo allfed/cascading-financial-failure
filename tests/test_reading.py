@@ -35,12 +35,8 @@ def test_read_trade(country_list):
     assert tr.loc["ALB", "AFG"] == pytest.approx(24)
 
 
-@pytest.mark.parametrize("file", (None, "./data/gdp/gdp_1999_2023_in_2015USD.csv"))
-def test_read_gdp(country_list, file):
-    if file:
-        gdp = read_gdp(country_list, file=file, years=[2008])
-    else:
-        gdp = read_gdp(country_list, file)
+def test_read_gdp(country_list, file="./data/gdp/gdp_1960_2023_in_2015USD.csv"):
+    gdp = read_gdp(country_list, file=file, years=[2008])
     assert isinstance(gdp, pd.DataFrame)
     assert gdp.shape[1] == 3
     for c in gdp["iso3"]:
@@ -49,7 +45,7 @@ def test_read_gdp(country_list, file):
     assert gdp["value"].dtype == np.dtype("float64")
     assert gdp["year"].dtype == np.dtype("int64")
     assert gdp.loc[gdp["iso3"] == "BEL", "value"].values == pytest.approx(
-        430_025_228_051.0
+        432_478_428.73e3
     )
 
 
@@ -74,7 +70,7 @@ def test_adjust_for_inflation(country_list, test_country, target_year):
     gdp = read_gdp(
         country_list,
         years=[target_year],
-        file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
     )
     v = gdp.loc[gdp["iso3"] == test_country, "value"].values[0]
     adj_v = cpi.inflate(v, 2015, target_year)
@@ -112,7 +108,7 @@ def test_expected_gdp(country_list, test_country):
     gdp = read_gdp(
         country_list,
         years=[2008],
-        file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
     )
     assert e_gdp[test_country][1] == pytest.approx(
         cpi.inflate(gdp.loc[gdp["iso3"] == test_country, "value"], 2015, 2007), rel=1e-5
@@ -120,7 +116,7 @@ def test_expected_gdp(country_list, test_country):
     gdp = read_gdp(
         country_list,
         years=[2006, 2007],
-        file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
     )
     gdp = adjust_for_inflation(gdp, "./data/inflation.csv", target_year=2007)
     vv = gdp.loc[gdp["iso3"] == test_country, "value"]

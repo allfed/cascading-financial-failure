@@ -70,7 +70,7 @@ def _melt_world_bank_data(raw_data: pd.DataFrame) -> pd.DataFrame:
 def read_gdp(
     country_list: pd.DataFrame,
     years: list[int] = [],
-    file="./data/gdp/gdp_2008_in_2015dollar.csv",
+    file="./data/gdp/gdp_1960_2023_in_2015dollar.csv",
 ) -> pd.DataFrame:
     """
     Read GDP data from the World Bank and format it into a pandas.DataFrame.
@@ -200,7 +200,7 @@ def adjust_for_inflation(
 def load_data(
     country_list_file="./data/country_list.csv",
     trade_file="./data/trade/imf_cif_2008_import.xlsx",
-    gdp_file="./data/gdp/gdp_2008_in_2015dollar.csv",
+    gdp_file="./data/gdp/gdp_1960_2023_in_2015dollar.csv",
     inflation_file="./data/inflation.csv",
     gdp_years=[2008],
     USD_value_year=2015,

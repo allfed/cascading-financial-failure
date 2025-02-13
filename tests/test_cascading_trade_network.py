@@ -163,7 +163,7 @@ def test_fit():
     for Model in [AGDP, DGDP, DTV, ATV]:
         G = Model(
             trade_file="./data/trade/imf_cif_2007_import.xlsx",
-            gdp_file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+            gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
             gdp_years=[2007],
         )
         gdps = expected_gdp(
