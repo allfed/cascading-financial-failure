@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+openpyxl
+country_converter
+geopandas
+matplotlib
+seaborn
+networkx
+tqdm
+pytest
+pip
+cpi
+
