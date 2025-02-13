@@ -1,0 +1,12 @@
+# Sources
+- [https://databank.worldbank.org/](https://databank.worldbank.org/)
+    - ```./gdp/.*```
+    - ```./inflation.csv```
+- [https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/)
+    - ```./map/.*```
+- [https://github.com/allfed/allfed-integrated-model](https://github.com/allfed/allfed-integrated-model)
+    - ```./country_list.csv```
+- [https://data.imf.org/](https://data.imf.org/?sk=9d6028d4-f14a-464c-a2f2-59b2cd424b85)
+    - ```./trade/.*```
+- [Data sources: Our World in Data (Nicolas Lippolis) based on Berthold Herrendorf, Richard Rogerson and Akos Valentinyi (2014) – “Growth and Structural Transformation” Handbook of Economic Growth Vol. 2B – processed by Our World in Data](https://ourworldindata.org/grapher/shares-of-gdp-by-economic-sector?tab=table&time=2011)
+    - ```./shares-of-gdp-by-economic-sector.csv```

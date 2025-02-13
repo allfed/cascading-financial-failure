@@ -1,0 +1,53 @@
+{
+  "chart": {
+    "title": "Distribution of gross domestic product by economic sector",
+    "citation": "Our World In Data based on Herrendorf et al. (2014)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/shares-of-gdp-by-economic-sector?tab=table&time=2011&v=1&csvType=filtered&useColumnShortNames=false",
+    "selection": [
+      "United States"
+    ]
+  },
+  "columns": {
+    "Share of services in GDP at current prices (Herrendorf et al. data)": {
+      "titleShort": "Services",
+      "titleLong": "Services",
+      "shortUnit": "%",
+      "unit": "% GDP",
+      "timespan": " Latest observation: 2016",
+      "type": "Numeric",
+      "owidVariableId": 1815,
+      "citationShort": " – processed by Our World in Data",
+      "citationLong": " – processed by Our World in Data. “Services” [dataset]. Our World In Data based on Herrendorf et al. (2014) [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1815.metadata.json"
+    },
+    "Share of industry in GDP at current prices (Herrendorf et al. data)": {
+      "titleShort": "Industry",
+      "titleLong": "Industry",
+      "shortUnit": "%",
+      "unit": "% GDP",
+      "timespan": " Latest observation: 2016",
+      "type": "Numeric",
+      "owidVariableId": 1814,
+      "citationShort": " – processed by Our World in Data",
+      "citationLong": " – processed by Our World in Data. “Industry” [dataset]. Our World In Data based on Herrendorf et al. (2014) [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1814.metadata.json"
+    },
+    "Share of agriculture in GDP at current prices (Herrendorf et al. data)": {
+      "titleShort": "Agriculture",
+      "titleLong": "Agriculture",
+      "shortUnit": "%",
+      "unit": "% GDP",
+      "timespan": "Earliest observation: 1800. Latest observation: 2016",
+      "type": "Numeric",
+      "owidVariableId": 1813,
+      "citationShort": " – processed by Our World in Data",
+      "citationLong": " – processed by Our World in Data. “Agriculture” [dataset]. Our World In Data based on Herrendorf et al. (2014) [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1813.metadata.json"
+    }
+  },
+  "dateDownloaded": "2025-01-14",
+  "activeFilters": {
+    "tab": "table",
+    "time": "2011"
+  }
+}
