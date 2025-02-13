@@ -45,7 +45,7 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
         self,
         country_list_file="./data/country_list.csv",
         trade_file="./data/trade/imf_cif_2008_import.xlsx",
-        gdp_file="./data/gdp/gdp_2008_in_2015dollar.csv",
+        gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
         inflation_file="./data/inflation.csv",
         gdp_years=[2008],
         USD_value_year=2015,
