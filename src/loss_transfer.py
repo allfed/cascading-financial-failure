@@ -4,7 +4,7 @@ from typing import Callable
 def beta(tol=1e-3) -> tuple[Callable[[float, float], float], list[float]]:
     """
     Loss transfer function derived from the beta distribution.
-    The mode of the beta distribuion is set to `impact`, which 
+    The mode of the beta distribuion is set to `impact`, which
     determines the first of the two parameters in the distribution.
     The return value is the expected value of the beta distribution,
     whith the second parameter being determined by the control parameter.
@@ -31,11 +31,11 @@ def beta(tol=1e-3) -> tuple[Callable[[float, float], float], list[float]]:
 
 def linear() -> tuple[Callable[[float, float], float], list[float]]:
     """
-    Linear loss transfer function such that [0,1]->[0,1], i.e.,
-    min(impact x alpha, 1.0)
-   
-   Returns:
-        tuple: transfer loss function and a list of bounds for it.
+     Linear loss transfer function such that [0,1]->[0,1], i.e.,
+     min(impact x alpha, 1.0)
+
+    Returns:
+         tuple: transfer loss function and a list of bounds for it.
     """
 
     def func(alpha: float, impact: float) -> float:
