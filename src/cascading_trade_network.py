@@ -64,10 +64,10 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
                 shall be used for the nodes' capacities.
             USD_value_year (int): year from which the USD value
                 is to be assumed for the GDP data.
-            loss_transfer (tuple): the loss transfer function and the 
+            loss_transfer (tuple): the loss transfer function and the
                 appropriate parameter bounds for the optimisation.
                 The function must be [0,1]->[0,1] and take a single
-                control parameter. 
+                control parameter.
                 Examples are in `src/loss_transfer.py`.
         """
         trade, gdp = load_data(
@@ -140,7 +140,7 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
         Reduce imports and exports between two countries.
 
         Arguments:
-            node, neighbour (str): the two countries' names 
+            node, neighbour (str): the two countries' names
             relative_reduction (float): fraction by which to reduce trade.
 
         Returns:
@@ -159,7 +159,7 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
         """
         Initialise cascading dynamics:
         `starting_nodes` get `is_hit` attribute set to True, others to False.
-        `capacity`, `_reduced_capacity` and `_reduced_weight` attributes 
+        `capacity`, `_reduced_capacity` and `_reduced_weight` attributes
         get reset.
 
         Arguments:
@@ -256,7 +256,7 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
         Arguments:
             start_nodes (dict[str]): mapping of nodes (country names) from which
                 the cascades shall begin to their initial losses.
-            alpha (float): the control parameter. 
+            alpha (float): the control parameter.
 
         Returns:
             None.

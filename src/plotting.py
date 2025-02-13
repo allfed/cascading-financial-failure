@@ -2,7 +2,6 @@ import geopandas as gpd
 from matplotlib.axes import Axes
 
 
-
 def _plot_winkel_tripel_map_border(ax: Axes) -> None:
     """
     Plot a Winkel Tripel map border on the specified matplotlib.Axes object.

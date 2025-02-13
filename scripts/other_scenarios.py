@@ -126,14 +126,10 @@ def calculate(timespan=4, model: Callable = AGDP):
     for scenario, (year, init_node) in tqdm(scenarios.items()):
         if "_min" in scenario:
             scenario = scenario.replace("_min", "")
-        G, local_rel_impact, global_impact = get_setup(
-            model, year, init_node, timespan
-        )
+        G, local_rel_impact, global_impact = get_setup(model, year, init_node, timespan)
 
         local_rel_impact = local_rel_impact
-        params = get_params(
-            model, 1 - (1 - dq) / 2, (1 - dq) / 2, timespan=timespan
-        )
+        params = get_params(model, 1 - (1 - dq) / 2, (1 - dq) / 2, timespan=timespan)
 
         for a in params:
             pred = G.predict(list(G.nodes()), a, local_rel_impact)
