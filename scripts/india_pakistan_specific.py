@@ -3,10 +3,8 @@ import sys
 sys.path.append("./src")
 from typing import Callable
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sb
 from tqdm import tqdm
 
 from cascading_trade_network import AGDP
@@ -20,7 +18,7 @@ def get_params(
     # SETUP
     G = Model(
         trade_file="./data/trade/imf_cif_2007_import.xlsx",
-        gdp_file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
         gdp_years=[2007],
     )
     gdps = expected_gdp(
@@ -67,7 +65,7 @@ def main(timespan=4, model=AGDP):
     # MODEL SETUP
     G = model(
         trade_file="./data/trade/imf_cif_2023_import.xlsx",
-        gdp_file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
         gdp_years=[2023],
     )
     params = get_params(model, 1 - (1 - dq) / 2, (1 - dq) / 2, timespan=timespan)
@@ -83,26 +81,7 @@ def main(timespan=4, model=AGDP):
         )
 
     res = pd.DataFrame(np.array(res), columns=["model", "alpha", "output"])
-    res["output"] = res["output"].apply(pd.to_numeric)
-    _, ax = plt.subplots(tight_layout=True)
-    sb.pointplot(
-        res,
-        x="model",
-        y="output",
-        errorbar=("pi", 100),
-        capsize=0.2,
-        linestyle="none",
-        marker="D",
-        estimator="median",
-        ax=ax,
-    )
-    plt.ylabel("Global loss [$]")
-    m_pred = np.median(res["output"])
-    plt.title(f"Δq = {dq}")
-    plt.axhline(m_pred, color="red", label="median of all models")
-    plt.legend()
-    print("Median of all predictions:", m_pred)
-    plt.savefig("./results/india_pakistan_specific.png", bbox_inches="tight")
+    print(res)
 
 
 if __name__ == "__main__":

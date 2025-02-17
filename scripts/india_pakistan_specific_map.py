@@ -19,7 +19,7 @@ def get_params(
     # SETUP
     G = Model(
         trade_file="./data/trade/imf_cif_2007_import.xlsx",
-        gdp_file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
         gdp_years=[2007],
     )
     gdps = expected_gdp(
@@ -62,7 +62,7 @@ def main(timespan=4, model: Callable = AGDP, relative=False):
     # MODEL SETUP
     G = model(
         trade_file="./data/trade/imf_cif_2023_import.xlsx",
-        gdp_file="./data/gdp/gdp_1999_2023_in_2015USD.csv",
+        gdp_file="./data/gdp/gdp_1960_2023_in_2015USD.csv",
         gdp_years=[2023],
     )
     a = get_params(model, 1 - (1 - dq) / 2, (1 - dq) / 2, timespan=timespan)[1]
