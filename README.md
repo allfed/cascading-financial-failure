@@ -24,6 +24,8 @@ The primary files are in [./src/](./src/) folder, and the model itself is contai
 
 Examples on how to use the model are in the [./scripts/](./scripts/) folder.
 
+All the data used for the model is publically available and the sources are listed in the [./data/README.md](./data/README.md) file.
+
 To reproduce the results from the paper, activate the appropriate Python environment (see previous section) and run (in this, i.e., root, directory):
 ```bash
 python ./scripts/generate_plots.py
