@@ -12,11 +12,29 @@ The purpose of the model is to provide a fast and interpretable estimate for of 
 
 # Dependencies
 
-A list of dependencies is listed in the [environment.yml](./environment.yml) and [requirements.txt](./requirements.txt) files.
+A list of dependencies is in the [environment.yml](./environment.yml) and [requirements.txt](./requirements.txt) files.
 
-We recommend using [conda](https://docs.conda.io/en/latest/) or [mamba](https://mamba.readthedocs.io/en/latest/) for setting up the virtual Python environment, using the [environment.yml](./environment.yml) file.
+We recommend using [conda](https://docs.conda.io/en/latest/) or [mamba](https://mamba.readthedocs.io/en/latest/) for setting up the virtual Python environment with the [environment.yml](./environment.yml) file.
 
-Creating the environment with [pipenv](https://pipenv.pypa.io/en/latest/) is also possible, using the [requirements.txt](./requirements.txt) file.
+To set up the environment with `conda`, run in the root directory (the one where this README.md resides):
+
+```bash
+conda create -f environment.yml
+```
+
+Then activate it with:
+```bash
+conda activate cff
+```
+
+Finally, install the model with:
+```bash
+python -m pip install -e .
+```
+
+Creating the environment with `pip` and related tools is also possible, using the [requirements.txt](./requirements.txt) file. 
+
+The code was tested using Python 3.12 and 3.13.
 
 # Repository structure and using the model
 
@@ -24,8 +42,13 @@ The primary files are in [./src/](./src/) folder, and the model itself is contai
 
 Examples on how to use the model are in the [./scripts/](./scripts/) folder.
 For a short and concrete example of how to use the model see the [jupyter notebook](./scripts/example.ipynb).
+NOTE: the `./environment.yml` does *not* contain `jupyter` so in order to use the notebook you need to run
+```bash
+conda install jupyter
+```
+in the `cff` environment (see previous section).
 
-All the data used for the model is publically available and the sources are listed in the [./data/README.md](./data/README.md) file.
+All the data used for the model is publicly available and the sources are listed in the [./data/README.md](./data/README.md) file.
 
 To reproduce the results from the paper, activate the appropriate Python environment (see previous section) and run (in this, i.e., root, directory):
 ```bash
@@ -37,13 +60,13 @@ The folder structure is as follows:
 ```bash
 .
 ├── data
-│   ├── country_list.csv
-│   ├── gdp
+│   ├── country_list.csv # country list taken from https://github.com/allfed/allfed-integrated-model
+│   ├── gdp # GDP data from the World Bank
 │   │   ├── gdp_1960_2023_in_2015USD.csv
 │   │   └── gdp_1960_2023_in_2015USD_metadata.csv
-│   ├── inflation.csv
+│   ├── inflation.csv # CPI from the World Bank
 │   ├── inflation_metadata.csv
-│   ├── map
+│   ├── map # geographical data for plotting the World map
 │   │   ├── ne_110m_admin_0_countries.cpg
 │   │   ├── ne_110m_admin_0_countries.dbf
 │   │   ├── ne_110m_admin_0_countries.prj
@@ -51,10 +74,10 @@ The folder structure is as follows:
 │   │   ├── ne_110m_admin_0_countries.shp
 │   │   ├── ne_110m_admin_0_countries.shx
 │   │   └── ne_110m_admin_0_countries.VERSION.txt
-│   ├── README.md
-│   ├── shares-of-gdp-by-economic-sector.csv
+│   ├── README.md # links to all data sources
+│   ├── shares-of-gdp-by-economic-sector.csv # from Our World in Data
 │   ├── shares-of-gdp-by-economic-sector.metadata.json
-│   └── trade
+│   └── trade # trading data from the International Monetary Fund
 │       ├── imf_cif_2007_import.xlsx
 │       ├── imf_cif_2008_import.xlsx
 │       ├── imf_cif_2010_import.xlsx
@@ -64,7 +87,7 @@ The folder structure is as follows:
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-├── results
+├── results # plots used in the research article
 │   ├── 2007_fit_c_by_c.png
 │   ├── 2007_fit.png
 │   ├── 2007_fit_si.png
@@ -78,7 +101,8 @@ The folder structure is as follows:
 │   ├── model_fit_other_si.png
 │   ├── propagation_example.png
 │   └── scores.csv
-├── scripts
+├── scripts # an example notebook and scripts used to generate results
+│   ├── example.ipynb
 │   ├── compare_models.py
 │   ├── generate_plots.py
 │   ├── great_recession_fit.py
@@ -89,7 +113,7 @@ The folder structure is as follows:
 │   ├── other_scenarios.py
 │   ├── plot_propagation.py
 │   └── score_models.py
-├── src
+├── src # the main model files
 │   ├── cascading_trade_network.py
 │   ├── loss_transfer.py
 │   ├── plotting.py
