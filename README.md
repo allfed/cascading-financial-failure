@@ -6,7 +6,7 @@ A country experiencing a failure, i.e., a fractional reduction of its capacity, 
 Those neighbours then experience their own failure and transfer it onto their neighbours, and so on until all nodes have been affected.
 The "echo" effect can only happen once between a pair of nodes and at reduced trade volume.
 
-The purpose of the model is to provide a fast and interpretable estimate for of a cascading global financial failure in catastrophic scenarios, such as a nuclear conflict.
+The purpose of the model is to provide a fast and interpretable estimate of a cascading global financial failure in catastrophic scenarios, such as a nuclear conflict.
 
 [A paper describing the model in detail can be found here.](https://arxiv.org/)
 
