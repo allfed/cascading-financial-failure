@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("./src")
-
 from functools import reduce
 
 import cpi
@@ -9,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from reading import (
+from src.reading import (
     _adjust_values_for_inflation,
     adjust_for_inflation,
     expected_gdp,

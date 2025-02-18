@@ -1,12 +1,8 @@
-import sys
-
-sys.path.append("./src")
-
 import pytest
 from typing import Callable
 import numpy as np
 
-from loss_transfer import beta, linear, quadratic
+from src.loss_transfer import beta, linear, quadratic
 
 
 @pytest.fixture

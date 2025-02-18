@@ -1,14 +1,11 @@
-import sys
-
-sys.path.append("./src")
 from typing import Callable
 
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from cascading_trade_network import AGDP
-from reading import expected_gdp
+from src.cascading_trade_network import AGDP
+from src.reading import expected_gdp
 
 
 def get_params(

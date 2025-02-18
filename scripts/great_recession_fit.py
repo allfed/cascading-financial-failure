@@ -1,15 +1,12 @@
-import sys
 from typing import Callable
-
-sys.path.append("./src")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sb
 from tqdm import tqdm
 from sklearn.metrics import r2_score
-from cascading_trade_network import AGDP, CascadingTradeNetwork
-from reading import expected_gdp
+from src.cascading_trade_network import AGDP, CascadingTradeNetwork
+from src.reading import expected_gdp
 
 
 def plot_country_by_country(

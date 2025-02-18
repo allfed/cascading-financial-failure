@@ -1,6 +1,3 @@
-import sys
-
-sys.path.append("./src")
 import re
 from random import sample
 
@@ -9,9 +6,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from cascading_trade_network import AGDP, ATV, DGDP, DTV, CascadingTradeNetwork
-from reading import expected_gdp, load_data
-from loss_transfer import beta
+from src.cascading_trade_network import AGDP, ATV, DGDP, DTV, CascadingTradeNetwork
+from src.reading import expected_gdp, load_data
+from src.loss_transfer import beta
 
 
 @pytest.fixture

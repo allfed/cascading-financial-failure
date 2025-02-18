@@ -1,15 +1,12 @@
-import sys
-
-sys.path.append("./src")
 from typing import Callable
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from cascading_trade_network import AGDP
-from plotting import plot_metric_map
-from reading import expected_gdp
+from src.cascading_trade_network import AGDP
+from src.plotting import plot_metric_map
+from src.reading import expected_gdp
 
 
 def get_params(

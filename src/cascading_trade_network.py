@@ -6,8 +6,8 @@ import networkx as nx
 import numpy as np
 from scipy.optimize import minimize_scalar
 
-from reading import load_data
-from loss_transfer import beta
+from src.reading import load_data
+from src.loss_transfer import beta
 from typing import Callable
 
 
@@ -170,9 +170,9 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
             None.
         """
         assert len(start_nodes) > 0, "at least one initial node must be provided"
-        assert all(
-            [0 <= si <= 1 for si in start_nodes.values()]
-        ), "initial impact must be in [0, 1]"
+        assert all([0 <= si <= 1 for si in start_nodes.values()]), (
+            "initial impact must be in [0, 1]"
+        )
         nx.set_node_attributes(
             self,
             {node: True if node in start_nodes else False for node in self},

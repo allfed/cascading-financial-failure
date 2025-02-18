@@ -1,6 +1,3 @@
-import sys
-
-sys.path.append("./src")
 import great_recession_fit
 import india_pakistan
 import india_pakistan_specific_map
@@ -8,7 +5,7 @@ import matplotlib.pyplot as plt
 import other_scenarios
 import compare_models
 import india_pakistan_pct_global
-from cascading_trade_network import AGDP
+from src.cascading_trade_network import AGDP
 
 plt.style.use(
     "https://raw.githubusercontent.com/allfed/ALLFED-matplotlib-style-sheet/main/ALLFED.mplstyle"

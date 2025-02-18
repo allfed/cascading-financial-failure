@@ -1,14 +1,11 @@
-import sys
-
-sys.path.append("./src")
 import networkx as nx
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from cascading_trade_network import AGDP, ATV, DTV, DGDP
-from loss_transfer import beta, linear, quadratic
-from reading import expected_gdp
+from src.cascading_trade_network import AGDP, ATV, DTV, DGDP
+from src.loss_transfer import beta, linear, quadratic
+from src.reading import expected_gdp
 
 
 def calculate_scores() -> list:

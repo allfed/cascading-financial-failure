@@ -1,6 +1,3 @@
-import sys
-
-sys.path.append("./src")
 from typing import Callable
 
 import matplotlib.pyplot as plt
@@ -10,8 +7,8 @@ import seaborn as sb
 from tqdm import tqdm
 import networkx as nx
 
-from cascading_trade_network import AGDP
-from reading import expected_gdp
+from src.cascading_trade_network import AGDP
+from src.reading import expected_gdp
 
 
 def get_params(
