@@ -170,9 +170,9 @@ class CascadingTradeNetwork(nx.DiGraph, ABC):
             None.
         """
         assert len(start_nodes) > 0, "at least one initial node must be provided"
-        assert all([0 <= si <= 1 for si in start_nodes.values()]), (
-            "initial impact must be in [0, 1]"
-        )
+        assert all(
+            [0 <= si <= 1 for si in start_nodes.values()]
+        ), "initial impact must be in [0, 1]"
         nx.set_node_attributes(
             self,
             {node: True if node in start_nodes else False for node in self},
