@@ -21,24 +21,31 @@ def _plot_winkel_tripel_map_border(ax: Axes) -> None:
     ax.set_yticks([])
 
 
-def _prepare_world() -> gpd.GeoDataFrame:
+def _prepare_world(
+    world_map_file="./data/map/ne_110m_admin_0_countries.shp",
+) -> gpd.GeoDataFrame:
     """
     Prepare the geospatial Natural Earth (NE) data (to be presumebly used in plotting).
 
     Arguments:
-        None
+        world_map_file (str): path to file containing NE data
 
     Returns:
         geopandas.GeoDataFrame: NE data projected to Winkel Tripel.
     """
     # get the world map
-    world = gpd.read_file("./data/map/ne_110m_admin_0_countries.shp")
+    world = gpd.read_file(world_map_file)
     world = world.to_crs("+proj=wintri")
     return world
 
 
 def plot_metric_map(
-    ax: Axes, metric: dict[str, float], metric_name: str, shrink=1.0, **kwargs
+    ax: Axes,
+    metric: dict[str, float],
+    metric_name: str,
+    shrink=1.0,
+    world_map_file="./data/map/ne_110m_admin_0_countries.shp",
+    **kwargs,
 ) -> Axes:
     """
     Plot world map with countries coloured by the specified metric.
@@ -48,13 +55,14 @@ def plot_metric_map(
         metric (dict): dictionary containing the mapping: contry iso3 code -> value
         metric_name (str): the name of the metric
         shrink (float, optional): colour bar shrink parameter
+        world_map_file (str): path to file containing NE data
         **kwargs (optional): any additional keyworded arguments recognised
             by geopandas plot function.
 
     Returns:
         matplotlib.axes.Axes: the Axes object containing the plot.
     """
-    world = _prepare_world()
+    world = _prepare_world(world_map_file)
 
     # Join the country_community dictionary to the world dataframe
     world[metric_name] = world["ADM0_A3"].map(metric)

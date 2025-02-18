@@ -23,6 +23,7 @@ Creating the environment with [pipenv](https://pipenv.pypa.io/en/latest/) is als
 The primary files are in [./src/](./src/) folder, and the model itself is contained in [./src/cascading_trade_network.py](./src/cascading_trade_network.py).
 
 Examples on how to use the model are in the [./scripts/](./scripts/) folder.
+For a short and concrete example of how to use the model see the [jupyter notebook](./scripts/example.ipynb).
 
 All the data used for the model is publically available and the sources are listed in the [./data/README.md](./data/README.md) file.
 
