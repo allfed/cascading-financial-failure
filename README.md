@@ -8,7 +8,7 @@ The "echo" effect can only happen once between a pair of nodes and at reduced tr
 
 The purpose of the model is to provide a fast and interpretable estimate of a cascading global financial failure in catastrophic scenarios, such as a nuclear conflict.
 
-[A paper describing the model in detail can be found here.](https://arxiv.org/)
+[A paper describing the model in detail can be found here.](https://arxiv.org/abs/2502.12980)
 
 # Dependencies
 
